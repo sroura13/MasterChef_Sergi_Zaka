@@ -61,16 +61,32 @@ public class MasterChef_sergi_zaka {
             System.out.println("");
         }
 
-        float mayor = puntuacion[0];
-        String ganador = chefs[0];
+        float oro = puntuacion[0];
 
         for (int i = 1; i < puntuacion.length; i++) {
-            if (puntuacion[i] > mayor) {
-                ganador = chefs[i];
-                mayor = puntuacion[i];
+            if (puntuacion[i] > oro) {
+                oro = puntuacion[i];
             }
         }
-        System.out.println("El ganador es " + ganador + " con una nota de " + mayor);
+
+        float plata = puntuacion[0];
+        for (int i = 1; i < puntuacion.length; i++) {
+            if (puntuacion[i] > plata && puntuacion[i] < oro) {
+                plata = puntuacion[i];
+            }
+        }
+
+        System.out.println("---PODIO---");
+        for (int i = 0; i < chefs.length; i++) {
+            System.out.print("ORO:");
+            if (puntuacion[i] == oro) {
+                System.out.println(chefs[i]);
+            }
+            System.out.print("PLATA:");
+            if (puntuacion[i] == plata) {
+                System.out.println(chefs[i]);
+            }
+        }
     }
 
 }
