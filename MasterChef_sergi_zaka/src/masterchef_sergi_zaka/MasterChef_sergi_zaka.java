@@ -34,7 +34,7 @@ public class MasterChef_sergi_zaka {
         System.out.println("");
         String[] chefs = new String[participantes];
         String[] platos = new String[participantes];
-        int[] puntuacion = new int[participantes];
+        float[] puntuacion = new float[participantes];
 
         for (int i = 0; i < chefs.length; i++) {
             System.out.print("Chef introduce tu nombre: ");
@@ -61,7 +61,7 @@ public class MasterChef_sergi_zaka {
             System.out.println("");
         }
 
-        int mayor = puntuacion[0];
+        float mayor = puntuacion[0];
         String ganador = chefs[0];
 
         for (int i = 1; i < puntuacion.length; i++) {
