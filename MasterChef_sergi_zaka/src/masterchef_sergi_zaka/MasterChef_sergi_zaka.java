@@ -41,10 +41,11 @@ public class MasterChef_sergi_zaka {
             chefs[i] = lector.nextLine().replaceAll(" +", " ");
             System.out.print("Introduce el nombre de la receta: ");
             platos[i] = lector.nextLine().replaceAll(" +", " ");
+            System.out.println("");
         }
 
-        String[] jurado = {"jurado1","jurado2","jurado3"};
-        
+        String[] jurado = {"jurado1", "jurado2", "jurado3"};
+
         int notas[] = new int[3];
         for (int i = 0; i < chefs.length; i++) {
             notas[0] = aleatorio.nextInt(11);
@@ -52,13 +53,24 @@ public class MasterChef_sergi_zaka {
             notas[2] = aleatorio.nextInt(11);
             puntuacion[i] = (notas[0] + notas[1] + notas[2]) / 3;
         }
+
         for (int i = 0; i < chefs.length; i++) {
-            System.out.println("Chef "+ chefs[i]);
-            System.out.println("PLATO: "+ platos[i]);
-            System.out.println("PUNTUACIÓN: "+ puntuacion[i]);
+            System.out.println("Chef " + chefs[i]);
+            System.out.println("PLATO: " + platos[i]);
+            System.out.println("PUNTUACIÓN: " + puntuacion[i]);
             System.out.println("");
         }
 
+        int mayor = puntuacion[0];
+        String ganador = chefs[0];
+
+        for (int i = 1; i < puntuacion.length; i++) {
+            if (puntuacion[i] > mayor) {
+                ganador = chefs[i];
+                mayor = puntuacion[i];
+            }
+        }
+        System.out.println("El ganador es " + ganador + " con una nota de " + mayor);
     }
 
 }
