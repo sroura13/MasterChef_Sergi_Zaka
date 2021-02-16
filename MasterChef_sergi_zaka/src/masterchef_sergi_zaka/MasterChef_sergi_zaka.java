@@ -18,7 +18,7 @@ public class MasterChef_sergi_zaka {
      */
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
-        int participantes = 0;
+        int participantes;
         do {
             System.out.print("Cuantos chefs participan? Máximo 10: ");
             participantes = lector.nextInt();
