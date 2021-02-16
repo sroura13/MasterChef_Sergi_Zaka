@@ -25,6 +25,7 @@ public class MasterChef_sergi_zaka {
         do {
             System.out.print("Cuantos chefs participan? Máximo 10: ");
             participantes = lector.nextInt();
+            lector.nextLine();
             if (participantes > 10) {
                 System.out.println("Por favor introduce máximo 10 participantes");
             }
