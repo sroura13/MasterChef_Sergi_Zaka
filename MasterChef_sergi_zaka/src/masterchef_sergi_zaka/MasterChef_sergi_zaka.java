@@ -34,7 +34,7 @@ public class MasterChef_sergi_zaka {
         System.out.println("");
         String[] chefs = new String[participantes];
         String[] platos = new String[participantes];
-        String[] puntuacion = new String[participantes];
+        int[] puntuacion = new int[participantes];
 
         for (int i = 0; i < chefs.length; i++) {
             System.out.print("Chef introduce tu nombre: ");
@@ -43,20 +43,21 @@ public class MasterChef_sergi_zaka {
             platos[i] = lector.nextLine().replaceAll(" +", " ");
         }
 
-        int notas[] = new int[3];
-        String[] jurado = new String[3];
-        jurado[1] = "jurado1"; 
-        jurado[2] = "jurado2"; 
-        jurado[3] = "jurado3"; 
+        String[] jurado = {"jurado1","jurado2","jurado3"};
         
-        for (int i = 0; i < notas.length; i++) {
-            notas [i] = aleatorio.nextInt();
+        int notas[] = new int[3];
+        for (int i = 0; i < chefs.length; i++) {
+            notas[0] = aleatorio.nextInt(11);
+            notas[1] = aleatorio.nextInt(11);
+            notas[2] = aleatorio.nextInt(11);
+            puntuacion[i] = (notas[0] + notas[1] + notas[2]) / 3;
         }
-
-        System.out.println(chefs[0]);
-        System.out.println(platos[0]);
-        System.out.println(chefs[1]);
-        System.out.println(platos[1]);
+        for (int i = 0; i < chefs.length; i++) {
+            System.out.println("Chef "+ chefs[i]);
+            System.out.println("PLATO: "+ platos[i]);
+            System.out.println("PUNTUACIÓN: "+ puntuacion[i]);
+            System.out.println("");
+        }
 
     }
 
