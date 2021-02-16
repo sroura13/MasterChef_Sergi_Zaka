@@ -18,20 +18,32 @@ public class MasterChef_sergi_zaka {
      */
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
-        String[] chefs = new String [2];
-        String[] platos = new String [2];
-        String[] puntuacion = new String [2];
+        int participantes = 0;
+        do {
+            System.out.print("Cuantos chefs participan? Máximo 10: ");
+            participantes = lector.nextInt();
+            if (participantes > 10) {
+                System.out.println("Por favor introduce máximo 10 participantes");
+            }
+        } while (participantes > 10);
+        
+        System.out.println("");
+        String[] chefs = new String[participantes];
+        String[] platos = new String[participantes];
+        String[] puntuacion = new String[participantes];
+        
         for (int i = 0; i < chefs.length; i++) {
             System.out.print("Chef introduce tu nombre: ");
-            chefs [i] = lector.nextLine().replaceAll(" +", " ");
+            chefs[i] = lector.nextLine().replaceAll(" +", " ");
             System.out.print("Introduce el nombre de la receta: ");
-            platos [i] = lector.nextLine().replaceAll(" +", " ");
+            platos[i] = lector.nextLine().replaceAll(" +", " ");
         }
+        
         System.out.println(chefs[0]);
         System.out.println(platos[0]);
         System.out.println(chefs[1]);
         System.out.println(platos[1]);
-        
+
     }
-    
+
 }
