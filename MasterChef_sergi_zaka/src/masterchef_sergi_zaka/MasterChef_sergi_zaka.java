@@ -77,16 +77,18 @@ public class MasterChef_sergi_zaka {
         }
 
         System.out.println("---PODIO---");
+        System.out.print("ORO:");
         for (int i = 0; i < chefs.length; i++) {
-            System.out.print("ORO:");
             if (puntuacion[i] == oro) {
                 System.out.println(chefs[i]);
             }
-            System.out.print("PLATA:");
+        }
+        
+        System.out.print("PLATA:");
+        for (int i = 0; i < chefs.length; i++) {
             if (puntuacion[i] == plata) {
                 System.out.println(chefs[i]);
             }
         }
     }
-
 }
